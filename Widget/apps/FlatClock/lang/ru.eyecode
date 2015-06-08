@@ -1,0 +1,10 @@
+<?php
+global $language;
+$language['Create a new document'] = 'Создать новый документ';
+$language['Create a new spreadsheet'] = 'Создать таблицу';
+$language['Do you want this widget to open automatically on the next session?'] = 'Запускать автоматически этот виджет?';
+$language['Send an internal message'] = 'Внутренняя почта';
+$language['Start a new document'] = 'Создать новый документ';
+$language['Start a new spreadsheet'] = 'Создать таблицу';
+$language['Upload your files'] = 'Выгрузить файлы';
+?>
