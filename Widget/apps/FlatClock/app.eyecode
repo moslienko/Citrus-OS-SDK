@@ -20,11 +20,11 @@ function FlatClock_run($params=null) {
 	$myFrame = new Iframe(array(
 		'name'=>'FlatClock_Frame',
 		'father'=>'FlatClockWND',
-		'x'=>0,
-		'y'=>0,
-		'height'=>$myWindow->height-30,
-		'width'=>$myWindow->width-30,
-		'url'=>'index.php?extern=apps/FlatClock/index.html'
+		'x'=>0, /*Без изменений*/
+		'y'=>0,/*Без изменений*/
+		'height'=>$myWindow->height-30, /*Координаты рамки вокруг виджета, за которую его можно перемещать*/
+		'width'=>$myWindow->width-30,   /*Координаты рамки вокруг виджета, за которую его можно перемещать*/
+		'url'=>'index.php?extern=apps/FlatClock/index.html' /*Ссылка на .html страницу, где FlatClock - название вашего приложения*/
 	));
 	$myFrame->show();
 	$myFrame->setCss(array(
