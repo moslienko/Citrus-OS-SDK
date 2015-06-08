@@ -5,15 +5,15 @@ function FlatClock_run($params=null) {
 
 	
 	$width = $_SESSION['SCREEN']['eyeApps']['width']-236;
-	// Window
+    /*Создаем новое окно*/
 	$myWindow = new Window(array(
 		'name' => 'FlatClockWND',
-		'father' => 'eyeWidgets',
-		'removeFatherPid' => 1,
-		'width' => 265,
-		'height' => 260,
-		'type' => CITRUS_WIDGET,
-		'savePosition' => 1,
+		'father' => 'eyeWidgets', /*Без изменений*/
+		'removeFatherPid' => 1,  /*Без изменений*/
+		'width' => 265,  /*Размеры окна*/
+		'height' => 260, /*Размеры окна*/
+		'type' => CITRUS_WIDGET, /*Для того, что бы создать виджет, а не полноценное приложение*/
+		'savePosition' => 1, /*Без изменений*/
 		'background' => 'index.php?extern=apps/FlatClock/bg.png'
 	));
 	$myWindow->show();
