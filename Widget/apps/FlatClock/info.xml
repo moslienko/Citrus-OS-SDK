@@ -5,6 +5,6 @@
 	<description>FlatClock</description>
 	<author>High Technological</author>
 	<license>AGPL</license>
-	<type>Widget</type>
+	<type>Store Appilation</type>
 	<icon>index.php?theme=USERTHEME&amp;extern=icons/48x48/FlatClock.png</icon>
 </package>
