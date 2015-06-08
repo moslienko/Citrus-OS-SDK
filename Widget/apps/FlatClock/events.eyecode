@@ -9,7 +9,7 @@ function FlatClock_on_Close($params=null) {
 	proc('end');
 }
 
-
+/*Автозагрузка виджета после перезагрузки*/
 function FlatClock_on_closeApp($params=null) {
 	$config = um('getCurrentUserDir').'/'.CONF_USER_DIR.'/eyeDesk/conf.xml';
 	$xml = eyeXML('getXMLfile',array($config));

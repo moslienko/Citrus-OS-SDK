@@ -36,12 +36,12 @@ function FlatClock_run($params=null) {
 		document.getElementById("'.$myPid.'_' . $myWindow->name . '_Content").className = "miniWND";
 		'
 	));
-	// Close button
+	// Кнопка закрытия виджета
 	$myImage9 = new Imagebox(array(
 		'name' => 'FlatClock_close',
 		'father' => 'FlatClockWND',
-		'x' => 0,
-		'y' => 0,
+		'x' => 0, /*координаты кнопки*/
+		'y' => 0, /*координаты кнопки*/
 		'vert'=>1,
 		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',
 		'signal' => 'closeApp',
