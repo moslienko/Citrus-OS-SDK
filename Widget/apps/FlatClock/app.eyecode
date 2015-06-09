@@ -14,10 +14,11 @@ function FlatClock_run($params=null) {
 		'height' => 260, /*Размеры окна*/
 		'type' => CITRUS_WIDGET, /*Для того, что бы создать виджет, а не полноценное приложение*/
 		'savePosition' => 1, /*Без изменений*/
-		'background' => 'index.php?extern=apps/FlatClock/bg.png'
+		'background' => 'index.php?extern=apps/FlatClock/bg.png' /*Не обязательно, если не нужна прозрачность*/
 	));
 	$myWindow->show();
-	$myFrame = new Iframe(array(
+	/*Окно создано, теперь перейдем к его содержимому*/
+	$myFrame = new Iframe(array( /*В окне создаем iframe, который будет подгружать требуемую страницу*/
 		'name'=>'FlatClock_Frame',
 		'father'=>'FlatClockWND',
 		'x'=>0, /*Без изменений*/
@@ -28,8 +29,8 @@ function FlatClock_run($params=null) {
 	));
 	$myFrame->show();
 	$myFrame->setCss(array(
-			'overflow' => 'auto',
-			'opacity' => '0.9'	
+			'overflow' => 'auto', /*Управление полосами прокрутки*/
+			'opacity' => '0.9'	/*Прозрачность*/
 		));
 	eyeX('rawjs',array('js'=>
 		'document.getElementById("'.$myPid.'_' . $myWindow->name . '").className = "miniWND";
@@ -42,15 +43,15 @@ function FlatClock_run($params=null) {
 		'father' => 'FlatClockWND',
 		'x' => 0, /*координаты кнопки*/
 		'y' => 0, /*координаты кнопки*/
-		'vert'=>1,
-		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',
+		'vert'=>1, /*Без изменений*/
+		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',/*Мы рекомендуем использовать нашу иконку*/
 		'signal' => 'closeApp',
-		'disableMsg'=>0
+		'disableMsg'=>0 /*Без изменений*/
 	));
 	$myImage9->show();
 	$myImage9->setCss(array("cursor"=>"pointer"));
 
-	$myLabel0 = new Label(array(
+	$myLabel0 = new Label(array( /*Создаем заголовок(если нужен)*/
 		'name' => 'FlatClock',
 		'father' => 'FlatClock_Content',
 		'x' => 20,
@@ -65,7 +66,7 @@ eyex('rawjs',array('js' =>
 }
 eyex('loadCss',array(
 		'url' => 'index.php?extern=apps/FlatClock/miniApps.css&type=css',
-		'id' => 'miniApps'
+		'id' => 'miniApps' /*В нем прописываем свойства окна*/
 	));
 function FlatClock_end() {
 	eyeWidgets('unserialize');
