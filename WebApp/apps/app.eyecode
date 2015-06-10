@@ -1,0 +1,36 @@
+<?php
+function WebApp_run($params=null) {
+
+
+
+	$myWindow = new Window(array(
+		'name' => 'WebApp_WND',
+		'father' => 'eyeApps',
+		'cent' => 1,
+		'width' => 800,
+		'height' => 600,
+		'title' => 'WebApp',
+		'sendResizeMsg'=>1,
+		'sigResize'=>'Resize'
+	));
+	$myWindow->show();
+
+
+	$homepage="https://site.com";
+	$myFrame = new Iframe(array(
+		'name'=>'WebAppFrame',
+		'father'=>'WebApp_WND_Content',
+		'x'=>0,
+		'y'=>0,
+		'height'=>$myWindow->height-0,
+		'width'=>$myWindow->width-0,
+		'url'=>$homepage
+	));
+	$myFrame->show();
+	
+}
+
+function WebApp_end($params=null) {
+	reqLib('eyeWidgets','unserialize');
+}
+?>

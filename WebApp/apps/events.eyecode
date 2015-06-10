@@ -1,0 +1,22 @@
+<?php
+
+
+function WebApp_on_Message($params="") {
+	reqLib('eyeWidgets','updateContent',$params);
+}
+
+function WebApp_on_Resize($params=null) {
+	$width = $params['arg'][0];
+	$height = $params['arg'][1];
+	$width = intval($width);
+	$height = intval($height);
+	$GLOBALS['WebAppFrame']->setWidth($width-0);
+	$GLOBALS['WebAppFrame']->setHeight($height-0);
+}
+
+function WebApp_on_Close(){
+	global $myPid;
+	service('proc','close',array($myPid));
+}
+
+?>

@@ -1,0 +1,10 @@
+<package>
+	<name>WebApp</name>
+	<category>Appilation</category>
+	<version>1</version>
+	<description>WebApp</description>
+	<author>WebApp</author>
+	<license>Copyright by Octavian Cioaca</license>
+	<type>Store Appilation</type>
+	<icon>index.php?extern=apps/WebApp/icon.png</icon>
+</package>
