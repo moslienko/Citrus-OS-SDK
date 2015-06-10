@@ -7,23 +7,27 @@ function WebApp_run($params=null) {
 		'name' => 'WebApp_WND',
 		'father' => 'eyeApps',
 		'cent' => 1,
-		'width' => 800,
+		'width' => 800, 
 		'height' => 600,
-		'title' => 'WebApp',
+		'title' => 'WebApp', 
 		'sendResizeMsg'=>1,
 		'sigResize'=>'Resize'
 	));
 	$myWindow->show();
-
-
+    /*Для локального веб приложения*/
+    $homepage="index.php?extern=apps/WebApp/index.html"; /*В index.html библиотеки и скрипты подключаются так же:
+    														index.php?extern=apps/WebApp/style.css
+    														index.php?extern=apps/WebApp/script.js*/
+    														
+    /*Если сайт, размещен в интернете*/
 	$homepage="https://site.com";
 	$myFrame = new Iframe(array(
 		'name'=>'WebAppFrame',
 		'father'=>'WebApp_WND_Content',
-		'x'=>0,
-		'y'=>0,
-		'height'=>$myWindow->height-0,
-		'width'=>$myWindow->width-0,
+		'x'=>0, /*Координаты расположения окна от левого верхнего края*/
+		'y'=>0, /*Координаты расположения окна от левого верхнего края*/
+		'height'=>$myWindow->height-0, /*Координаты iframe, в данном случае они будут точно такие, как и у родительского окна*/
+		'width'=>$myWindow->width-0,   /*Координаты iframe, в данном случае они будут точно такие, как и у родительского окна*/
 		'url'=>$homepage
 	));
 	$myFrame->show();
