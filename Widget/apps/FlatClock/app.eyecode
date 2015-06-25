@@ -43,11 +43,11 @@ function FlatClock_run($params=null) {
 	$myImage9 = new Imagebox(array(
 		'name' => 'FlatClock_close',
 		'father' => 'WidgetControls',
-		'x' => 0,
-		'y' => 0,
+		'x' => 0, /*Координаты кнопки*/
+		'y' => 0, /*Координаты кнопки*/
 		'vert'=>1,
-		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',
-		'signal' => 'closeApp',
+		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png', /*Мы рекоменжуем использовать одинакомую для всех иконку*/
+		'signal' => 'closeApp', /*Команда по нажатию -  закрыть виджет*/
 		'disableMsg'=>0
 	));
 	$myImage9->show();
