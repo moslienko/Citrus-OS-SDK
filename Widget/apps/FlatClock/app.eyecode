@@ -18,7 +18,7 @@ function FlatClock_run($params=null) {
 	));
 	$myWindow->show();
 	/*Окно создано, теперь перейдем к его содержимому*/
-	$myFrame = new Iframe(array( /*В окне создаем iframe, который будет подгружать требуемую страницу*/
+	$webFrame = new Iframe(array( /*В окне создаем iframe, который будет подгружать требуемую страницу*/
 		'name'=>'FlatClock_Frame',
 		'father'=>'FlatClockWND',
 		'x'=>0, /*Без изменений*/
@@ -27,8 +27,8 @@ function FlatClock_run($params=null) {
 		'width'=>$myWindow->width-30,   /*Координаты рамки вокруг виджета, за которую его можно перемещать*/
 		'url'=>'index.php?extern=apps/FlatClock/index.html' /*Ссылка на .html страницу, где FlatClock - название вашего приложения*/
 	));
-	$myFrame->show();
-	$myFrame->setCss(array(
+	$webFrame->show();
+	$webFrame->setCss(array(
 			'overflow' => 'auto', /*Управление полосами прокрутки*/
 			'opacity' => '0.9'	/*Прозрачность*/
 		));
@@ -37,16 +37,18 @@ function FlatClock_run($params=null) {
 		document.getElementById("'.$myPid.'_' . $myWindow->name . '_Content").className = "miniWND";
 		'
 	));
+	eyeX('createDiv', array('name' => 'WidgetControls', 'father' => 'FlatClockWND', 'class' => 'WidgetControls'));
+	eyeX('loadCSS', array('url' => 'index.php?extern=apps/eyeX/css/widget.css&type=css&type=css', 'id' => 'widget.css'));
 	// Кнопка закрытия виджета
 	$myImage9 = new Imagebox(array(
 		'name' => 'FlatClock_close',
-		'father' => 'FlatClockWND',
-		'x' => 0, /*координаты кнопки*/
-		'y' => 0, /*координаты кнопки*/
-		'vert'=>1, /*Без изменений*/
-		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',/*Мы рекомендуем использовать нашу иконку*/
+		'father' => 'WidgetControls',
+		'x' => 0,
+		'y' => 0,
+		'vert'=>1,
+		'url' => 'index.php?theme=' . $_SESSION['usertheme'] . '&extern=icons/12x12/close.png',
 		'signal' => 'closeApp',
-		'disableMsg'=>0 /*Без изменений*/
+		'disableMsg'=>0
 	));
 	$myImage9->show();
 	$myImage9->setCss(array("cursor"=>"pointer"));
@@ -65,8 +67,8 @@ eyex('rawjs',array('js' =>
 	));
 }
 eyex('loadCss',array(
-		'url' => 'index.php?extern=apps/FlatClock/miniApps.css&type=css',
-		'id' => 'miniApps' /*В нем прописываем свойства окна*/
+		'url' => 'index.php?extern=apps/eyeX/css/widget.css&type=css',
+		'id' => 'miniApps' 
 	));
 function FlatClock_end() {
 	eyeWidgets('unserialize');
