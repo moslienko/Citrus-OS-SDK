@@ -14,7 +14,7 @@ function FlatClock_run($params=null) {
 		'height' => 260, /*Размеры окна*/
 		'type' => CITRUS_WIDGET, /*Для того, что бы создать виджет, а не полноценное приложение*/
 		'savePosition' => 1, /*Без изменений*/
-		'background' => 'index.php?extern=apps/FlatClock/bg.png' /*Не обязательно, если не нужна прозрачность*/
+		'background' => 'index.php?extern=apps/CitrusUI/css/widgetbg.png' /*Не обязательно, если не нужна прозрачность*/
 	));
 	$myWindow->show();
 	/*Окно создано, теперь перейдем к его содержимому*/
@@ -38,7 +38,7 @@ function FlatClock_run($params=null) {
 		'
 	));
 	eyeX('createDiv', array('name' => 'WidgetControls', 'father' => 'FlatClockWND', 'class' => 'WidgetControls'));
-	eyeX('loadCSS', array('url' => 'index.php?extern=apps/eyeX/css/widget.css&type=css&type=css', 'id' => 'widget.css'));
+	eyeX('loadCSS', array('url' => 'index.php?extern=apps/CitrusUI/css/widget.css&type=css&type=css', 'id' => 'widget.css'));
 	// Кнопка закрытия виджета
 	$myImage9 = new Imagebox(array(
 		'name' => 'FlatClock_close',
@@ -67,7 +67,7 @@ eyex('rawjs',array('js' =>
 	));
 }
 eyex('loadCss',array(
-		'url' => 'index.php?extern=apps/eyeX/css/widget.css&type=css',
+		'url' => 'index.php?extern=apps/CitrusUI/css/widget.css&type=css',
 		'id' => 'miniApps' 
 	));
 function FlatClock_end() {
